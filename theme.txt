@@ -1,0 +1,116 @@
+================================================================================
+STUDY SYNC / SYNCLY — DESIGN THEME & SYSTEM SPECIFICATION
+================================================================================
+
+1. THEME OVERVIEW & DESIGN PHILOSOPHY
+--------------------------------------------------------------------------------
+Theme Style: Modern Dark Minimalist / Sleek Studio (Linear & Raycast Inspired)
+Tone: Focused, clean, distraction-free productivity environment for study partners.
+Primary Theme Elements:
+- Deep obsidian and charcoal dark mode to minimize eye fatigue during long sessions.
+- Warm terracotta/burnt orange accent for brand identity, focus points, and active states.
+- High-contrast typography hierarchy (off-white for headers, muted silver for secondary content).
+- Consistent spacing, subtle borders, and smooth 150ms transitions.
+
+
+2. COMPLETE COLOR PALETTE (CSS TOKENS)
+--------------------------------------------------------------------------------
+Variable Name       Hex Code     Color Name           Usage & Role
+--------------------------------------------------------------------------------
+--bg                #0B0B0F      Deep Obsidian        Main canvas/app background
+--surface           #16161A      Elevated Charcoal    Cards, sidebar, and container surface
+--surface-hover     #1C1C21      Lighter Charcoal     Hover states on interactive surfaces
+--border            #252529      Subtle Grey          Default card and sidebar boundary lines
+--border-light      #2E2E33      Soft Muted Grey      Interactive border highlight on hover
+
+--text              #EFEFEF      Soft Off-White       Primary headings, active labels, body text
+--text-secondary    #8A8A8E      Muted Silver         Secondary labels, inactive menu items
+--text-muted        #5A5A5E      Dimmed Grey          Subtitles, icons, and status labels
+
+--accent            #C4633F      Warm Terracotta      Primary brand color, "Sync", active indicator
+--accent-hover      #D4785A      Bright Terracotta    Hover state for accent buttons and links
+
+--green             #3DA66F      Sage Emerald         "Online" status indicator & success tags
+--amber             #D4A017      Warm Amber           Pending tasks, alerts, and warnings
+
+
+3. TYPOGRAPHY SYSTEM
+--------------------------------------------------------------------------------
+Font Family:
+- Primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+- Imported via Google Fonts: Weights 400, 500, 600, 700
+
+Font Weights:
+- 400 (Regular): General body copy, paragraph explanations
+- 500 (Medium): Navigation links, username, subtitles
+- 600 (Semi-Bold): Section titles, card headings, user initials
+- 700 (Bold): Main brand logo ("StudySync")
+
+Text Rendering:
+- Smoothing: -webkit-font-smoothing: antialiased
+- Line Height: 1.6 base line height for readability
+
+
+4. LAYOUT & DIMENSIONS
+--------------------------------------------------------------------------------
+Sidebar Width:        260px (Fixed position: fixed; top: 0; left: 0; height: 100vh)
+Sidebar Z-Index:      50 (Guarantees sidebar stays above scrolling page content)
+Main Content Offset:  margin-left: 260px; min-height: 100vh
+Content Padding:      32px 40px (Generous breathing room)
+
+Border Radii:
+- 8px:   Interactive navigation links and buttons
+- 12px:  Content cards and dashboard panels
+- 50%:   Circular avatar and status indicators
+
+
+5. UI COMPONENT SPECIFICATIONS
+--------------------------------------------------------------------------------
+A. SIDEBAR BRANDING (.sidebar-logo):
+   - Padding: 24px, separated by 1px solid var(--border) at the bottom.
+   - Logo Title: 1.25rem (20px), font-weight 700, letter-spacing -0.02em.
+   - "Sync" Accent: Wrapped in <span> colored with var(--accent).
+   - Tagline: 0.7rem, uppercase, letter-spacing 0.05em, color var(--text-muted).
+
+B. NAVIGATION LINKS (.nav-link):
+   - Display: Flex with 12px gap, padding 10px 16px.
+   - Text Style: 0.875rem (14px), font-weight 500, color var(--text-secondary).
+   - Icons: Inline SVGs (18px × 18px), stroke-width 1.8.
+   - Hover State: Background var(--surface-hover), text color var(--text).
+   - Active State: Background var(--surface-hover), text color var(--text),
+     plus a 2px left border in var(--accent) (border-left: 2px solid var(--accent)).
+
+C. USER PROFILE (.sidebar-user):
+   - Position: Fixed at the bottom of the sidebar with 1px top border.
+   - Avatar: 34px × 34px circle, background var(--accent), bold white initial.
+   - User Details: Name in 0.85rem (var(--text)), Status in 0.7rem (var(--text-muted)).
+   - Logout Button: Clean icon button that transitions to var(--accent) on hover.
+
+D. CARDS (.card):
+   - Background: var(--surface)
+   - Border: 1px solid var(--border)
+   - Border Radius: 12px
+   - Padding: 24px
+   - Hover State: Border switches smoothly to var(--border-light).
+
+E. MICRO-INTERACTIONS & TRANSITIONS:
+   - Default Duration: 0.15s
+   - Timing Function: ease
+   - Target Properties: background-color, color, border-color
+
+
+6. HTML & SEMANTIC TAGS CHEATSHEET
+--------------------------------------------------------------------------------
+Tag           Purpose / Meaning
+--------------------------------------------------------------------------------
+<aside>       Semantic container for sidebar / secondary page navigation.
+<div>         Generic container/box used to group elements for styling and layout.
+<h1> - <h6>   Headings ranked by importance (h1 is the primary title).
+<span>        Inline wrapper to style specific words inside a block (e.g., "Sync").
+<p>           Paragraph tag for standard text lines and descriptions.
+<nav>         Semantic section specifically wrapping site navigation links.
+<a>           Anchor / hyperlink tag (defines clickable links).
+<svg>         Scalable Vector Graphics for resolution-independent vector icons.
+<button>      Clickable action element (used for logout, toggles, actions).
+class="..."   CSS selector label applied to tags to connect them to stylesheet rules.
+================================================================================
