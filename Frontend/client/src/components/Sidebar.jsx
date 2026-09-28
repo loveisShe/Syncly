@@ -1,7 +1,7 @@
 import NavItem from'./NavItem'
 import UserProfile from './UserProfile'
 
-function Sidebar({ isOpen , setIsOpen }){
+function Sidebar({ isOpen , setIsOpen  , onBackToLanding }){
     return(
         <aside className={`sidebar ${isOpen ? 'open' : ""}`}>
 
@@ -9,7 +9,7 @@ function Sidebar({ isOpen , setIsOpen }){
                         LOGO
             ============================== */}
 
-            <div className='sidebar-logo'>
+            <div className='sidebar-logo' onClick={onBackToLanding} style={{cursor: 'pointer'}}>
                 <h1>
                     SYNC<span>ly</span>
                 </h1>

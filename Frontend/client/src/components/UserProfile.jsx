@@ -1,7 +1,7 @@
 function UserProfile(){
     return(
         <div className="sidebar-user">
-            <div className="user-Avatar">
+            <div className="user-avatar">
                 S
             </div>
 
@@ -13,7 +13,7 @@ function UserProfile(){
                     Online
                 </p>
             </div>
-            <button>
+            <button className="logout-button" title="Logout">
                 ↪
             </button>
         </div>

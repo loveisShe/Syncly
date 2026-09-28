@@ -21,7 +21,7 @@ Variable Name       Hex Code     Color Name           Usage & Role
 --surface           #16161A      Elevated Charcoal    Cards, sidebar, and container surface
 --surface-hover     #1C1C21      Lighter Charcoal     Hover states on interactive surfaces
 --border            #252529      Subtle Grey          Default card and sidebar boundary lines
---border-light      #2E2E33      Soft Muted Grey      Interactive border highlight on hover
+--border-light      #2E2E33      Soft Muted Grey     Interactive border highlight on hover
 
 --text              #EFEFEF      Soft Off-White       Primary headings, active labels, body text
 --text-secondary    #8A8A8E      Muted Silver         Secondary labels, inactive menu items
