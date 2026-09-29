@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 
 
-function HeroNavBar({ onNavigate }) {
+function HeroNavBar({ onOpenLogin , onOpensignUp }) {
 
   return (
     <header className="navbar">
@@ -32,11 +32,11 @@ function HeroNavBar({ onNavigate }) {
 
       <div className="navbar-actions">
 
-        <button className="navbar-login" onClick={() => onNavigate('dashboard')}>
+        <button className="navbar-login" onClick={onOpenLogin}>
           Log in
         </button>
 
-        <button className="navbar-signup" onClick={() => onNavigate('dashboard')}>
+        <button className="navbar-signup" onClick={onOpensignUp}>
           Get Started
         </button>
 

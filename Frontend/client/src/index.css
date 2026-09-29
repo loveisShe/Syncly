@@ -3,7 +3,7 @@
 /* ==============================
    1. DESIGN TOKENS
 ============================== */
-:root{
+:root {
     --bg: #0B0B0F;
     --surface: #16161A;
     --surface-hover: #1C1C21;
@@ -14,7 +14,7 @@
     --text: #EFEFEF;
     --text-secondary: #8A8A8E;
     --text-muted: #5A5A5E;
-    
+
     --accent: #C4633F;
     --accent-hover: #D4785A;
 
@@ -25,7 +25,7 @@
 /* ==============================
    2. RESET
 ============================== */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -34,7 +34,7 @@
 /* ==============================
    3. BODY
 ============================== */
-body{
+body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background: var(--bg);
     color: var(--text);
@@ -43,14 +43,14 @@ body{
 /* ==============================
    4. BUTTON RESET
 ============================== */
-button{
+button {
     font-family: inherit;
 }
 
 /* ==============================
    5. LINKS
 ============================== */
-a{
+a {
     color: inherit;
     text-decoration: none;
 }
@@ -58,14 +58,14 @@ a{
 /* ==============================
    6. APP LAYOUT
 ============================== */
-.app{
+.app {
     min-height: 100vh;
 }
 
 /* ==============================
    7. MAIN CONTENT
 ============================== */
-.main-content{
+.main-content {
     margin-left: 260px;
     min-height: 100vh;
     padding: 32px 40px;
@@ -75,8 +75,8 @@ a{
    8. MOBILE
 ============================== */
 
-@media (max-width: 768px){
-    .main-content{
+@media (max-width: 768px) {
+    .main-content {
         margin-left: 0;
         padding: 24px 20px;
     }
@@ -114,10 +114,10 @@ a{
    SIDEBAR
 ============================== */
 
-.sidebar{
+.sidebar {
     position: fixed;
 
-    top:0;
+    top: 0;
     left: 0;
 
     width: 260px;
@@ -137,22 +137,22 @@ a{
    SIDEBAR LOGO
 ============================== */
 
-.sidebar-logo{
+.sidebar-logo {
     padding: 24px;
     border-bottom: 1px solid var(--border);
 }
 
-.sidebar-logo h1{
+.sidebar-logo h1 {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
 
-.sidebar-logo h1 span{
+.sidebar-logo h1 span {
     color: var(--accent);
 }
 
-.sidebar-logo p{
+.sidebar-logo p {
     margin-top: 4px;
     font-size: 0.7rem;
     letter-spacing: 0.05em;
@@ -163,14 +163,14 @@ a{
    NAVIGATION
 ============================== */
 
-.sidebar-nav{
+.sidebar-nav {
     padding: 20px 12px;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-.nav-link{
+.nav-link {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -180,32 +180,31 @@ a{
     color: var(--text-secondary);
     font-size: 14px;
     font-weight: 500;
-    transition: 
+    transition:
         background-color 0.15s ease,
         color 0.15s ease,
-        border-color 0.15s ease    
-    ;
+        border-color 0.15s ease;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     background: var(--surface-hover);
     color: var(--text);
 }
 
-.nav-link.active{
+.nav-link.active {
     background: var(--surface-hover);
     color: var(--text);
     border-left-color: var(--accent);
 }
 
-.nav-icon{
+.nav-icon {
     width: 18px;
     display: flex;
     justify-content: center;
     color: var(--text-muted);
 }
 
-.nav-link.active .nav-icon{
+.nav-link.active .nav-icon {
     color: var(--accent);
 }
 
@@ -213,7 +212,7 @@ a{
    USERPROFILE
 ============================== */
 
-.sidebar-user{
+.sidebar-user {
     margin-top: auto;
     padding: 16px;
     border-top: 1px solid var(--border);
@@ -222,7 +221,7 @@ a{
     gap: 10px;
 }
 
-.user-avatar{
+.user-avatar {
     width: 34px;
     height: 34px;
     border-radius: 50%;
@@ -236,23 +235,23 @@ a{
     flex-shrink: 0;
 }
 
-.user-info{
+.user-info {
     min-width: 0;
     flex: 1;
 }
 
-.user-name{
+.user-name {
     color: var(--text);
     font-size: 0.85rem;
     font-weight: 500;
 }
 
-.user-status{
+.user-status {
     color: var(--text-muted);
     font-size: 0.7rem;
 }
 
-.logout-button{
+.logout-button {
     width: 32px;
     height: 32px;
     border: none;
@@ -260,12 +259,12 @@ a{
     background: transparent;
     color: var(--text-muted);
     cursor: pointer;
-    transition: 
+    transition:
         background-color 0.15s ease,
         color 0.15s ease;
 }
 
-.logout-button:hover{
+.logout-button:hover {
     background: var(--surface-hover);
     color: var(--accent);
 }
@@ -274,7 +273,7 @@ a{
    MOBILE CLOSE BUTTON
 ============================== */
 
-.mobile-close{
+.mobile-close {
     display: none;
 }
 
@@ -284,11 +283,11 @@ a{
     PAGE HEADER
 ============================== */
 
-.page-header{
+.page-header {
     margin-bottom: 32px;
 }
 
-.eyebrow{
+.eyebrow {
     margin-bottom: 8px;
     color: var(--accent);
     font-size: 0.7rem;
@@ -297,14 +296,14 @@ a{
 }
 
 
-.page-header h1{
+.page-header h1 {
     font-size: 2rem;
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: -0.03em;
 }
 
-.page-description{
+.page-description {
     margin-top: 8px;
     color: var(--text-secondary);
     font-size: 0.95rem;
@@ -314,9 +313,9 @@ a{
     DASHBOARD GRID
 ============================== */
 
-.dashboard-grid{
+.dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
@@ -324,34 +323,34 @@ a{
     CARD
 ============================== */
 
-.card{
+.card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 24px;
     transition:
-    border-color 0.15s ease,
-    background-color 0.15s ease;
+        border-color 0.15s ease,
+        background-color 0.15s ease;
 }
 
-.card:hover{
+.card:hover {
     border-color: var(--border-light);
 }
 
-.card-label{
+.card-label {
     color: var(--text-muted);
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.06em;
 }
 
-.card h2{
+.card h2 {
     margin-top: 12px;
     font-size: 2rem;
     font-weight: 600;
 }
 
-.card-description{
+.card-description {
     margin-top: 8px;
     color: var(--text-secondary);
     font-size: 0.85rem;
@@ -361,7 +360,7 @@ a{
     MOBILE MENU
 ============================== */
 
-.mobile-menu{
+.mobile-menu {
     display: none;
     position: fixed;
     top: 16px;
@@ -380,23 +379,23 @@ a{
     RESPONSIVE
 ============================== */
 
-@media (max-width: 768px){
-    .sidebar{
+@media (max-width: 768px) {
+    .sidebar {
         transform: translateX(-100%);
         transition: transform 0.2s ease;
     }
 
-    .sidebar.open{
+    .sidebar.open {
         transform: translateX(0);
     }
 
-    .mobile-menu{
+    .mobile-menu {
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .mobile-close{
+    .mobile-close {
         display: flex;
         align-items: center;
         justify-self: center;
@@ -411,11 +410,11 @@ a{
         color: var(--text);
     }
 
-    .dashboard-grid{
+    .dashboard-grid {
         grid-template-columns: 1fr;
     }
 
-    .page-header h1{
+    .page-header h1 {
         font-size: 1.6rem;
     }
 }
@@ -426,7 +425,7 @@ a{
             HERO
 ============================== */
 
-.hero-section{
+.hero-section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -439,7 +438,7 @@ a{
 
 /* Subtle background glow */
 
-.hero-section::before{
+.hero-section::before {
     content: "";
     position: absolute;
     width: 600px;
@@ -455,7 +454,7 @@ a{
             BADGE
 ============================== */
 
-.hero-badge{
+.hero-badge {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -471,23 +470,25 @@ a{
     margin-bottom: 28px;
 }
 
-.pulse-dot{
+.pulse-dot {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--green); 
+    background: var(--green);
     box-shadow: 0 0 0 4px rgb(61, 166, 111, 0.12);
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0%{
+    0% {
         box-shadow: 0 0 0 0 rgba(61, 166, 111, 0.4);
     }
-    70%{
+
+    70% {
         box-shadow: 0 0 0 7px rgba(61, 166, 111, 0);
     }
-    100%{
+
+    100% {
         box-shadow: 0 0 0 7px rgba(61, 166, 111, 0);
     }
 }
@@ -496,7 +497,7 @@ a{
             HERO TITLE
 ============================== */
 
-.hero-title{
+.hero-title {
     position: relative;
     max-width: 900px;
     margin: 0;
@@ -507,7 +508,7 @@ a{
     font-weight: 700;
 }
 
-.hero-title span{
+.hero-title span {
     color: var(--accent);
 }
 
@@ -515,7 +516,7 @@ a{
             DESCRIPTION
 ============================== */
 
-.hero-description{
+.hero-description {
     position: relative;
     max-width: 600px;
     margin-top: 28px;
@@ -528,7 +529,7 @@ a{
             ACTION BUTTON
 ============================== */
 
-.hero-actions{
+.hero-actions {
     position: relative;
     display: flex;
     align-items: center;
@@ -536,7 +537,8 @@ a{
     margin-top: 32px;
 }
 
-.btn-primary, .btn-secondary{
+.btn-primary,
+.btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -548,32 +550,32 @@ a{
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
-    transition: 
+    transition:
         background-color 0.15s ease,
         color 0.15s ease,
         border-color 0.15s ease,
         transform 0.15s ease;
 }
 
-.btn-primary{
+.btn-primary {
     border: 1px solid var(--accent);
     background: var(--accent);
     color: #fff;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     background: var(--accent-hover);
     border-color: var(--accent-hover);
     transform: translateY(-1px);
 }
 
-.btn-secondary{
+.btn-secondary {
     border: 1px solid var(--border);
     background: var(--surface);
     color: var(--text);
 }
 
-.btn-secondary:hover{
+.btn-secondary:hover {
     background: var(--surface-hover);
     border-color: var(--border-light);
     transform: translateY(-1px);
@@ -583,7 +585,7 @@ a{
         PRODUCT PREVIEW
 ============================== */
 
-.hero-preview{
+.hero-preview {
     position: relative;
     width: min(850px, 100%);
     margin-top: 80px;
@@ -594,7 +596,7 @@ a{
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
 }
 
-.preview-header{
+.preview-header {
     height: 52px;
     padding: 0 18px;
     display: flex;
@@ -607,45 +609,45 @@ a{
     letter-spacing: 0.05em;
 }
 
-.preview-header > div{
+.preview-header>div {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.preview-status{
+.preview-status {
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: var(--green);
 }
 
-.preview-code{
+.preview-code {
     color: var(--text-secondary);
     font-family: monospace;
     letter-spacing: 0;
 }
 
-.preview-body{
+.preview-body {
     padding: 55px 30px 60px;
     text-align: center;
 }
 
-.preview-label{
+.preview-label {
     color: var(--text-muted);
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.12em;
 }
 
-.preview-body h2{
+.preview-body h2 {
     margin-top: 8px;
     color: var(--text);
     font-size: 28px;
     font-weight: 600;
 }
 
-.preview-timer{
+.preview-timer {
     margin-top: 25px;
     color: var(--text);
     font-size: clamp(40px, 6vw, 64px);
@@ -654,14 +656,14 @@ a{
     font-variant-numeric: tabular-nums;
 }
 
-.preview-users{
+.preview-users {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.preview-avatar{
+.preview-avatar {
     width: 32px;
     height: 32px;
     display: flex;
@@ -676,11 +678,11 @@ a{
     font-weight: 600;
 }
 
-.preview-avatar:first-child{
+.preview-avatar:first-child {
     margin-left: 0;
 }
 
-.preview-users span{
+.preview-users span {
     margin-left: 12px;
     color: var(--text-muted);
     font-size: 12px;
@@ -690,7 +692,7 @@ a{
    NAVBAR for landing page
 ========================================= */
 
-.navbar{
+.navbar {
     width: 100%;
     height: 72px;
     padding: 0 48px;
@@ -702,14 +704,14 @@ a{
     z-index: 20;
 }
 
-.navbar-links{
+.navbar-links {
     display: flex;
     align-items: center;
     gap: 32px;
 }
 
-.navbar-links a{
-    position: relative;  
+.navbar-links a {
+    position: relative;
     padding: 8px 0;
     color: var(--text-secondary);
     font-size: 15px;
@@ -718,7 +720,7 @@ a{
     transition: color 0.15s ease;
 }
 
-.navbar-links a::after{
+.navbar-links a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -730,21 +732,21 @@ a{
     transition: width 0.2s ease;
 }
 
-.navbar-links a:hover{
+.navbar-links a:hover {
     color: var(--text);
 }
 
-.navbar-links a:hover::after{
+.navbar-links a:hover::after {
     width: 100%;
 }
 
-.navbar-actions{
+.navbar-actions {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.navbar-login{
+.navbar-login {
     height: 42px;
     padding: 0 16px;
     border: 1px solid transparent;
@@ -761,13 +763,13 @@ a{
         border-color 0.15s ease;
 }
 
-.navbar-login:hover{
+.navbar-login:hover {
     color: var(--text);
     background: var(--surface-hover);
     border-color: var(--border);
 }
 
-.navbar-signup{
+.navbar-signup {
     height: 42px;
     padding: 0 20px;
     border: 1px solid var(--accent);
@@ -778,36 +780,365 @@ a{
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: 
+    transition:
         background-color 0.15s ease,
         border-color 0.15s ease,
         transform 0.15s ease;
 }
 
-.navbar-signup:hover{
+.navbar-signup:hover {
     background: var(--accent-hover);
     border-color: var(--accent-hover);
     transform: translateY(-1px);
 }
 
-@media (max-width: 768px){
-    .navbar{
+@media (max-width: 768px) {
+    .navbar {
         width: 100%;
         padding: 0 20px;
         height: 64px;
     }
 
-    .navbar-links{
+    .navbar-links {
         display: none;
     }
 
-    .navbar-login{
+    .navbar-login {
         display: none;
     }
 
-    .navbar-signup{
+    .navbar-signup {
         height: 36px;
         padding: 0 14px;
         font-size: 13px;
+    }
+}
+
+/* Authentication */
+
+/* =========================
+   AUTH POPUP
+========================= */
+
+.auth-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+}
+
+.auth-modal{
+    position: relative;
+    width: min(420px , 100%);
+    padding: 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 25px 8px rgba(0, 0, 0, 0.45);
+    animation: authModalIn 0.2s ease;
+}
+
+@keyframes authModalIn{
+    from{
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.auth-close{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.auth-close:hover{
+    background: var(--surface-hover);
+    color: var(--text);
+}
+
+/* =========================
+   AUTH HEADER
+========================= */
+
+.auth-header{
+    margin-bottom: 8px;
+}
+
+.auth-eyebrow{
+    margin-bottom: 8px;
+    color: var(--accent);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+.auth-header h2{
+    color: var(--text);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+}
+
+.auth-header p:last-child{
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label{
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.form-group input{
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+    transition: 
+        border-color 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.form-group input::placeholder{
+    color: var(--text-muted);
+}
+
+.form-group input:focus{
+    border-color: var(--accent);
+    background: var(--surface-hover);
+}
+
+/* =========================
+   PASSWORD LABEL
+========================= */
+
+.password-label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password-label label{
+    margin: 0;
+}
+
+/* =========================
+   FORGET PASSWORD
+========================= */
+
+.forgot-password{
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--accent);
+    font-family: inherit;
+    font-size: 0.72rem;
+    cursor: pointer;
+}
+
+.forgot-password:hover{
+    color: var(--accent-hover);
+}
+
+/* =========================
+   REMEMBER ME
+========================= */
+
+.remember-me{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    cursor: pointer;
+}
+
+.remember-me input{
+    accent-color: var(--accent);
+}
+
+/* =========================
+   SUBMIT
+========================= */
+
+.auth-submit{
+    width: 100%;
+    height: 44px;
+    margin-top: 3px;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;        ;
+}
+
+.auth-submit:hover{
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   SWITCH
+========================= */
+
+.auth-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 22px;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+.auth-switch button{
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--accent);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.auth-switch button:hover{
+    color: var(--accent-hover);
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.auth-divider{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 18px;
+    color: var(--text-muted);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+}
+
+.auth-divider::before, .auth-divider::after{
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+/* =========================
+   GOOGLE AUTH
+========================= */
+
+.google-auth-button{
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.84rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 
+        background-color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.google-auth-button:hover{
+    background: var(--surface-hover);
+    border-color: var(--border-light);
+}
+
+.google-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: #4285f4;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+@media (max-width: 480px){
+    .auth-overlay{
+        padding: 16px;
+    }
+
+    .auth-modal{
+        padding: 28px 20px;
+        border-radius: 14px;
+    }
+    .auth-header h2{
+        font-size: 1.4rem;
     }
 }
