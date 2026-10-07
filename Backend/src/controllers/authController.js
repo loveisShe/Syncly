@@ -1,12 +1,6 @@
-const fs = require("fs").promises;
-const path = require("path");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
-const userFilePath = path.join(
-    __dirname,
-    "../database/users.json"
-);
+const User = require("../models/User");
 
 const signup = async (req, res) => {
     try {
@@ -21,25 +15,10 @@ const signup = async (req, res) => {
 
         const normalizeEmail = email.trim().toLowerCase();
 
-        let users = [];
-        try{
-            const userData = await fs.readFile(
-                userFilePath,
-                "utf-8"
-            )
-            users = userData.trim() ? JSON.parse(userData) : [];
-        }catch(readError){
-            if(readError.code === "ENOENT"){
-                users = [];
-            }else{
-                throw readError;
-            }
-        }
+        const existingUser = await User.findOne({
+            email: normalizeEmail
+        });
 
-
-        const existingUser = users.find(
-            user => user.email.toLowerCase() === normalizeEmail
-        );
 
         if (existingUser) {
             return res.status(409).json({
@@ -53,26 +32,17 @@ const signup = async (req, res) => {
             10
         );
 
-        const newUser = {
-            id: Date.now().toString(),
+        const newUser = await User.create({
             name,
             email: normalizeEmail,
             password: hashedPassword
-        };
-
-        users.push(newUser);
-
-        await fs.writeFile(
-            userFilePath,
-            JSON.stringify(users, null, 2)
-        );
-
+        });
 
         return res.status(201).json({
             success: true,
             message: "Account created successfully",
             user: {
-                id: newUser.id,
+                id: newUser._id,
                 name: newUser.name,
                 email: newUser.email
             }
@@ -98,24 +68,11 @@ const login = async(req , res) => {
             });
         }
 
-        let users = [];
-        try{
-            const userData = await fs.readFile(
-                userFilePath,
-                "utf-8"
-            )
-            users = userData.trim() ? JSON.parse(userData) : [];
-        }catch(readError){
-            if(readError.code === "ENOENT"){
-                users = [];
-            }else{
-                throw readError;
-            }
-        }
+        const normalizeEmail = email.trim().toLowerCase();
 
-        const user = users.find(
-            user => user.email === email
-        );
+        const user = await User.findOne({
+            email: normalizeEmail
+        });
 
         if(!user){
             return res.status(401).json({
@@ -138,7 +95,7 @@ const login = async(req , res) => {
 
         const token = jwt.sign(
             {
-                id: user.id,
+                id: user._id,
                 email: user.email
             },
             process.env.JWT_SECRET,
@@ -152,7 +109,7 @@ const login = async(req , res) => {
             message: "Login successful",
             token,
             user: {
-                id: user.id,
+                id: user._id,
                 name: user.name,
                 email: user.email
             }
@@ -166,8 +123,29 @@ const login = async(req , res) => {
     }
 };
 
+const getme = async (req, res) => {
+    try{
+        const user = await User.findById(req.user.id).select("--password");
+
+        if(!user){
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+    }catch(error){
+        console.error("Get user error: " ,error);
+        return res.status(200).json({
+            success: true,
+            message: "Something went wrong"
+        });
+    }
+};
+
 module.exports = {
     signup,
-    login
+    login,
+    getme
 };
 
