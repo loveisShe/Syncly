@@ -123,9 +123,9 @@ const login = async(req , res) => {
     }
 };
 
-const getme = async (req, res) => {
+const getUser = async (req, res) => {
     try{
-        const user = await User.findById(req.user.id).select("--password");
+        const user = await User.findById(req.user.id).select("-password");
 
         if(!user){
             return res.status(404).json({
@@ -134,10 +134,86 @@ const getme = async (req, res) => {
             });
         }
 
-    }catch(error){
-        console.error("Get user error: " ,error);
         return res.status(200).json({
             success: true,
+            message: "User found",
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email
+            }
+        });
+
+    }catch(error){
+        console.error("Get user error: " ,error);
+        return res.status(500).json({
+            success: false,
+            message: "Something went wrong"
+        });
+    }
+};
+
+const updateName = async (req, res) => {
+    try{
+        const { name } = req.body;
+        const user = await User.findById(req.user.id);
+        if(!user){
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+        if(!name || name.trim() === ""){
+            return res.status(400).json({
+                success: false,
+                message: "Name is required"
+            });
+        }
+
+        user.name = name.trim();
+
+        await user.save();
+
+        return res.status(200).json({
+            success: true,
+            message: "Name updated successfully",
+            user: {
+                id: user._id,
+                name: user.name,
+                email: user.email
+            }
+        });
+    }catch(error){
+        console.log("Update name error: ", error);
+        return res.status(500).json({
+            success: false,
+            message: "Something went wrong"
+        });
+    }
+};
+
+const deleteUser = async (req, res) => {
+    try{
+        const user = await User.findById(req.user._id);
+        
+        if(!user){
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+
+        await user.deleteOne();
+
+        return res.status(200).json({
+            success: true,
+            message: "User deleted Sucessfully"
+        });
+    }catch(error){
+        console.log("Delete user error: " , error);
+        return res.status(500).json({
+            success: false,
             message: "Something went wrong"
         });
     }
@@ -146,6 +222,8 @@ const getme = async (req, res) => {
 module.exports = {
     signup,
     login,
-    getme
+    getUser,
+    updateName,
+    deleteUser
 };
 
